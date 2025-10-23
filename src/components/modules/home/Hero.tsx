@@ -7,10 +7,10 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <section className="relative  py-20 overflow-hidden ">
-      {/* Gradient background glow */}
+
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/10 via-accent/10 to-background opacity-80 blur-3xl" />
       <ContainerWrapper className="flex flex-col-reverse md:flex-row items-center justify-between">
-        {/* Text Content (wrapped in MotionWrapper) */}
+
         <MotionWrapper
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -59,7 +59,6 @@ export default function HeroSection() {
           </div>
         </MotionWrapper>
 
-        {/* Image (also wrapped in MotionWrapper) */}
         <MotionWrapper
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
