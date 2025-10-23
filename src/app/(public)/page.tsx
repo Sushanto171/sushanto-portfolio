@@ -1,10 +1,9 @@
-import { Button } from "@/components/ui/button";
+import Hero from "@/components/modules/home/Hero";
 
 const HomePage = () => {
   return (
-    <div>
-      <h1>This is Landing page</h1>
-      <Button>Click Me</Button>
+    <div className="h-[3000px]">
+      <Hero />
     </div>
   );
 };

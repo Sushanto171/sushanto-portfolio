@@ -6,7 +6,7 @@ export default function PublicLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <Navbar />
-      <main className="flex-1 container mx-auto px-6">{children}</main>
+      <main className="flex-1">{children}</main>
       <Footer />
     </>
   );

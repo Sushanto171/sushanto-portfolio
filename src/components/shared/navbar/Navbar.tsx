@@ -3,24 +3,26 @@ import Link from "next/link";
 import MobilMenuDrawer from "./MobilMenuDrawer";
 
 export const navItems = [
-  { href: "#home", label: "Home", icon: <Home className="w-5 h-5" /> },
-  { href: "#about", label: "About", icon: <User className="w-5 h-5" /> },
+  { href: "/", label: "Home", icon: <Home className="w-5 h-5" /> },
+  { href: "/about", label: "About", icon: <User className="w-5 h-5" /> },
   {
-    href: "#projects",
+    href: "/projects",
     label: "Projects",
     icon: <Folder className="w-5 h-5" />,
   },
-  { href: "#contact", label: "Contact", icon: <Mail className="w-5 h-5" /> },
+  { href: "/contact", label: "Contact", icon: <Mail className="w-5 h-5" /> },
 ];
 export function Navbar() {
   return (
     <>
       {/* Desktop Navbar (Top) */}
       <header className="hidden md:block sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
-        <div className="container mx-auto flex items-center justify-between px-6 py-3">
+        <div className="container mx-auto flex items-center justify-between px-6 py-6">
           {/* Brand / Logo */}
-          <Link href="/" className="text-lg font-semibold tracking-tight">
-            Sushanto.dev
+          <Link href="/" className="text-2xl font-semibold tracking-tight">
+<span className=" hover:text-accent">
+  Sushanto</span>.<span className="text-primary">dev
+              </span>
           </Link>
 
           {/* Desktop Navigation */}
