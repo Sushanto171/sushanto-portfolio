@@ -1,9 +1,9 @@
-import { baseUrl } from "@/config/baseUrl";
+import { backendUrl } from "@/config/baseUrl";
 
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
-  const backendRes = await fetch(`${baseUrl()}/auth/login`, {
+  const backendRes = await fetch(`${backendUrl}/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
   });
   const data = await backendRes.json();
   const setCookie = backendRes.headers.get("set-cookie");
- 
+
   const response = NextResponse.json(data, { status: data.statusCode });
   if (setCookie) {
     response.headers.set("set-cookie", setCookie);

@@ -1,25 +1,36 @@
-import { Folder, Home, LayoutDashboard, LogIn, Mail, User } from "lucide-react";
+import getUser from "@/app/api/(auth)/getUser";
+import { Folder, Home, LayoutDashboard, Mail, User } from "lucide-react";
 import Link from "next/link";
+import { JSX } from "react";
+import AuthToggle from "./AuthToggle";
 import MobilMenuDrawer from "./MobilMenuDrawer";
-import { Button } from "@/components/ui/button";
 
-export const navItems = [
-  { href: "/", label: "Home", icon: <Home className="w-5 h-5" /> },
-  { href: "/about", label: "About", icon: <User className="w-5 h-5" /> },
+export interface INavLink {
+  href: string;
+  label: string;
+  icon: JSX.Element;
+  isHidden?: boolean;
+}
 
-  {
-    href: "/dashboard",
-    label: "Dashboard",
-    icon: <LayoutDashboard className="w-5 h-5" />,
-  },
-  {
-    href: "/projects",
-    label: "Projects",
-    icon: <Folder className="w-5 h-5" />,
-  },
-  { href: "/contact", label: "Contact", icon: <Mail className="w-5 h-5" /> },
-];
-export function Navbar() {
+export async function Navbar() {
+  const user = await getUser();
+  const navItems: INavLink[] = [
+    { href: "/", label: "Home", icon: <Home className="w-5 h-5" /> },
+    { href: "/about", label: "About", icon: <User className="w-5 h-5" /> },
+    {
+      href: "/dashboard",
+      label: "Dashboard",
+      icon: <LayoutDashboard className="w-5 h-5" />,
+      isHidden: !user,
+    },
+    {
+      href: "/projects",
+      label: "Projects",
+      icon: <Folder className="w-5 h-5" />,
+    },
+    { href: "/contact", label: "Contact", icon: <Mail className="w-5 h-5" /> },
+  ];
+
   return (
     <>
       {/* Desktop Navbar (Top) */}
@@ -37,6 +48,7 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
+                hidden={item.isHidden}
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {item.icon}
@@ -44,9 +56,7 @@ export function Navbar() {
               </Link>
             ))}
           </nav>
-          <Button >
-            <Link href="/login" className="flex items-center gap-2"> <LogIn/> Login</Link>
-          </Button>
+          <AuthToggle user={user} />
         </div>
       </header>
 
@@ -57,6 +67,7 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
+              hidden={item.isHidden}
               className="flex flex-col items-center justify-center text-xs text-muted-foreground hover:text-foreground transition-colors "
             >
               {item.icon}
@@ -65,7 +76,7 @@ export function Navbar() {
           ))}
 
           {/* Mobile Menu Drawer */}
-          <MobilMenuDrawer />
+          <MobilMenuDrawer navItems={navItems} user={user} />
         </div>
       </div>
     </>

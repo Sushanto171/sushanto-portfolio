@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,9 +11,11 @@ import {
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 import z from "zod";
 const schema = z.object({
-  email: z.email({ error: "Invalid Type Email." }),
+  email: z.string().email({ error: "Invalid Type Email." }),
   password: z
     .string({ error: "Invalid Type Password" })
     .length(6, "Password must be 6 Character."),
@@ -22,28 +25,42 @@ export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  const router = useRouter();
+
   const formHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const toastId = toast.loading("Logging in...");
+
     const formData = new FormData(e.currentTarget);
-    const validatedData = schema.safeParse({
-      ...Object.fromEntries(formData),
-    });
+    const validatedData = schema.safeParse(Object.fromEntries(formData));
+
     if (!validatedData.success) {
-      alert(Object.values(validatedData.error.flatten().fieldErrors));
+      toast.dismiss(toastId);
+      toast.error("Please check your input fields.");
+      return;
     }
 
-    const res = await fetch("/api/login", {
-        method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(validatedData.data),
-      credentials: "include", // browser will save HttpOnly cookies
-    });
-    console.log("=====>",await res.json());
     try {
-    } catch (error) {
-      console.error(error);
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(validatedData.data),
+        credentials: "include",
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.message || "Login failed");
+
+      toast.success(data.message || "Login successful!");
+      router.push("/");
+    } catch (error: any) {
+      toast.error(error.message || "Something went wrong");
+    } finally {
+      toast.dismiss(toastId);
     }
   };
+
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>

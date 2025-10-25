@@ -7,3 +7,5 @@ export const baseUrl = () => {
   }
   return url;
 };
+
+export const backendUrl = baseUrl();

@@ -3,13 +3,21 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { IUser } from "@/types";
 import { DialogTitle } from "@radix-ui/react-dialog";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { navItems } from "./Navbar";
+import AuthToggle from "./AuthToggle";
+import { INavLink } from "./Navbar";
 
-export default function MobilMenuDrawer() {
+export default function MobilMenuDrawer({
+  navItems,
+  user,
+}: {
+  navItems: INavLink[];
+  user: IUser;
+}) {
   const [open, setOpen] = useState(false);
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -29,6 +37,7 @@ export default function MobilMenuDrawer() {
             <Link
               key={item.href}
               href={item.href}
+              hidden={item.isHidden}
               onClick={() => setOpen(false)}
               className="flex items-center gap-3 text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
@@ -36,6 +45,7 @@ export default function MobilMenuDrawer() {
               {item.label}
             </Link>
           ))}
+          <AuthToggle user={user} />
         </nav>
         <Separator className="my-6" />
         <p className="text-xs text-muted-foreground text-center">
