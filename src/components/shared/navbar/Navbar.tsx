@@ -1,10 +1,17 @@
-import { Folder, Home, Mail, User } from "lucide-react";
+import { Folder, Home, LayoutDashboard, LogIn, Mail, User } from "lucide-react";
 import Link from "next/link";
 import MobilMenuDrawer from "./MobilMenuDrawer";
+import { Button } from "@/components/ui/button";
 
 export const navItems = [
   { href: "/", label: "Home", icon: <Home className="w-5 h-5" /> },
   { href: "/about", label: "About", icon: <User className="w-5 h-5" /> },
+
+  {
+    href: "/dashboard",
+    label: "Dashboard",
+    icon: <LayoutDashboard className="w-5 h-5" />,
+  },
   {
     href: "/projects",
     label: "Projects",
@@ -20,9 +27,8 @@ export function Navbar() {
         <div className="container mx-auto flex items-center justify-between px-6 py-6">
           {/* Brand / Logo */}
           <Link href="/" className="text-2xl font-semibold tracking-tight">
-<span className=" hover:text-accent">
-  Sushanto</span>.<span className="text-primary">dev
-              </span>
+            <span className=" hover:text-accent">Sushanto</span>.
+            <span className="text-primary">dev</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -38,6 +44,9 @@ export function Navbar() {
               </Link>
             ))}
           </nav>
+          <Button >
+            <Link href="/login" className="flex items-center gap-2"> <LogIn/> Login</Link>
+          </Button>
         </div>
       </header>
 

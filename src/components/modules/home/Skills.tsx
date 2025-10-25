@@ -43,8 +43,8 @@ export default function SkillsSection() {
 
                   {/* Category Badge */}
                   <Badge
-                    variant={"outline"}
-                    className="capitalize  mt-0.5 bg-muted-foreground/18 scale-80 sm:scale-90
+                    variant={"destructive"}
+                    className="capitalize border mt-0.5 bg-muted-foreground/18 scale-80 sm:scale-90
                     text-foreground/45"
                   >
                     {skill.category}

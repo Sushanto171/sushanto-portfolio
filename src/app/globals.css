@@ -83,3 +83,15 @@
     @apply bg-background text-foreground antialiased;
   }
 }
+
+@keyframes dash {
+  to {
+    background-position: 100% 0;
+  }
+}
+
+.animate-[dash_2s_linear_infinite] {
+  border-image-slice: 1;
+  border-top-style: dashed;
+  animation: dash 2s linear infinite;
+}

@@ -1,4 +1,5 @@
 import Hero from "@/components/modules/home/Hero";
+import LearningPathTab from "@/components/modules/home/LearningPath";
 import SkillsSection from "@/components/modules/home/Skills";
 import ContainerWrapper from "@/components/shared/ContainerWrapper";
 
@@ -8,6 +9,7 @@ const HomePage = () => {
       <Hero />
       <ContainerWrapper>
         <SkillsSection />
+        <LearningPathTab />
       </ContainerWrapper>
     </div>
   );
