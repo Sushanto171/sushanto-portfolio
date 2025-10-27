@@ -11,7 +11,7 @@ import {
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import toast from "react-hot-toast";
 import z from "zod";
 const schema = z.object({
@@ -26,6 +26,7 @@ export function LoginForm({
   ...props
 }: React.ComponentProps<"div">) {
   const router = useRouter();
+  const [searchParams] = useSearchParams()
 
   const formHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -53,7 +54,7 @@ export function LoginForm({
       if (!res.ok) throw new Error(data.message || "Login failed");
 
       toast.success(data.message || "Login successful!");
-      router.push("/");
+      router.push(searchParams[1] || "/");
     } catch (error: any) {
       toast.error(error.message || "Something went wrong");
     } finally {
