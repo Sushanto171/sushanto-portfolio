@@ -26,7 +26,7 @@ export function LoginForm({
   ...props
 }: React.ComponentProps<"div">) {
   const router = useRouter();
-  const [searchParams] = useSearchParams()
+  const [searchParams] = useSearchParams();
 
   const formHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -52,7 +52,6 @@ export function LoginForm({
       const data = await res.json();
 
       if (!res.ok) throw new Error(data.message || "Login failed");
-
       toast.success(data.message || "Login successful!");
       router.push(searchParams[1] || "/");
     } catch (error: any) {
