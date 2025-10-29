@@ -1,11 +1,14 @@
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
 import Link from "next/link";
 import { SidebarNav } from "./Sidebar";
+import AuthToggle from "@/components/shared/navbar/AuthToggle";
+import getUser from "@/app/api/(auth)/getUser";
 
 const data = {
   navMain: [
@@ -23,10 +26,17 @@ const data = {
         { title: "Add Blog", url: "/dashboard/add-blog" },
       ],
     },
+    {
+      title: "Settings",
+      items: [
+        { title: "Profile", url: "/dashboard/profile" },
+      ],
+    },
   ],
 };
 
 export async function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
+  const user = await getUser()
   return (
     <Sidebar {...props}>
       <SidebarHeader>
@@ -41,6 +51,9 @@ export async function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
       </SidebarContent>
 
       <SidebarRail />
+      <SidebarFooter>
+        <AuthToggle user={user} />
+      </SidebarFooter>
     </Sidebar>
   );
 }
