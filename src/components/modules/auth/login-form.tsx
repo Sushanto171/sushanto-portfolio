@@ -53,7 +53,7 @@ export function LoginForm({
 
       if (!res.ok) throw new Error(data.message || "Login failed");
       toast.success(data.message || "Login successful!");
-      router.push(searchParams?.length >0 ? searchParams[1] : "/");
+      router.push(searchParams?.length >0 ? searchParams[1] : "/dashboard");
     } catch (error: any) {
       console.log(error);
       toast.error(error.message || "Something went wrong");

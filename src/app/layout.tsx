@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Sushanto Kumar | MERN Stack & Next.js Developer Portfolio",
   description:
     "I’m Sushanto Kumar, a passionate MERN Stack developer specializing in React.js, Next.js, Tailwind CSS, Node.js, Express.js, and MongoDB. Explore my projects, blogs, and experience building modern web applications.",
-    icons: {
+  icons: {
     icon: "/favicon.ico",
   },
   keywords: [
@@ -63,6 +63,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="MaDbWmP54uIbI2CW-nwQmC-a5i2R72BuW4jejYD1ap4"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col dark`}
       >
