@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-20  relative overflow-hidden">
+    <section id="skills" className="relative ">
       {/* Section Glow */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/5 via-accent/5 to-background blur-3xl opacity-60" />
 
