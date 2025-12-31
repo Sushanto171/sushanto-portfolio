@@ -1,3 +1,4 @@
+import SectionHeader from "@/components/SectionHeader";
 import { MotionWrapper } from "@/components/shared/MotionWrapper";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,21 +7,17 @@ import Image from "next/image";
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="relative b">
+    <section id="skills" className="relative pt-18">
       {/* Section Glow */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/5 via-accent/5 to-background blur-3xl opacity-60" />
 
       {/* Header */}
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-foreground">Tech Stacks</h2>
-        <p className="text-muted-foreground mt-2">
-          Technologies I use to craft digital experiences
-        </p>
-      </div>
+      <SectionHeader title="Technical Skills" />
+
 
       {/* Skills Grid */}
       {/* <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-6xl mx-auto"> */}
-      <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap justify-center sm:gap-6">
+      <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap justify-center py-12 sm:gap-6">
         {skillsData.map((skill, index) => (
           <MotionWrapper
             key={skill.id}

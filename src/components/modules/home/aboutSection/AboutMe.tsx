@@ -3,23 +3,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Clock, Code, Rocket } from "lucide-react";
 import Image from "next/image";
 import ContactMeButton from "../heroSection/ContactMeButton";
+import SectionHeader from "@/components/SectionHeader";
 
 export default function AboutMe() {
   return (
-    <section id="about" className="relative flex min-h-screen w-full flex-col md:pt-8">
+    <section id="about" className="relative flex w-full flex-col md:pt-18">
       <div className="flex flex-1 flex-col ">
         {/* Section Header */}
-        <div className="flex justify-start pt-10 pb-2">
-          <div className="flex items-center gap-3 px-4 pb-3 pt-5">
-            <span className="h-8 w-1 bg-primary rounded-full" />
-            <h2 className="text-foreground text-[22px] font-bold leading-tight tracking-[-0.015em]">
-              About Me
-            </h2>
-          </div>
-        </div>
+      <SectionHeader title="About Me" />
 
         {/* Main Feature Content */}
-        <div className="flex justify-center pb-20">
+        <div className="flex justify-center">
           <div className="flex flex-col lg:flex-row gap-12  w-full px-4 py-6">
             {/* Left Column: Text & Bio */}
             <div className="flex flex-col gap-8 flex-[1.5]">

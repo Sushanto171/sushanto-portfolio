@@ -5,8 +5,8 @@ import ContactMeButton from './ContactMeButton';
 export default function HeroContent() {
   return (
     <Fragment>
-       <p className="text-xs sm:text-sm uppercase tracking-widest text-accent font-semibold flex items-center gap-1">
-      <span className="inline-block animate-wave text-xl">👋</span> Hello, I’m
+       <p className="text-xs sm:text-sm uppercase tracking-widest text-accent font-semibold flex items-center gap-1 justify-center sm:justify-start">
+      <span className="inline-block animate-wave text-xl ">👋</span> Hello, I’m
     </p>
 
 

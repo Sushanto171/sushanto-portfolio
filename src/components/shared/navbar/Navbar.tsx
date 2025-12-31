@@ -1,5 +1,5 @@
 import getUser from "@/app/api/(auth)/getUser";
-import { Folder, Home, Mail, User } from "lucide-react";
+import { Code, Folder, Home, Mail, User } from "lucide-react";
 import Link from "next/link";
 import { JSX } from "react";
 import ContainerWrapper from "../ContainerWrapper";
@@ -17,13 +17,10 @@ export async function Navbar() {
   const user = await getUser();
   const navItems: INavLink[] = [
     { href: "/", label: "Home", icon: <Home className="w-5 h-5" /> },
-    { href: "#about", label: "About", icon: <User className="w-5 h-5" /> },
-    {
-      href: "#projects",
-      label: "Projects",
-      icon: <Folder className="w-5 h-5" />,
-    },
-    { href: "#contact", label: "Contact", icon: <Mail className="w-5 h-5" /> },
+    { href: "/#about", label: "About", icon: <User className="w-5 h-5" /> },
+    { href: "/#skills", label: "Skills", icon: <Code className="w-5 h-5" /> },
+    { href: "/#projects",label: "Projects",icon: <Folder className="w-5 h-5" />},
+    { href: "/#contact", label: "Contact", icon: <Mail className="w-5 h-5" /> },
   ];
   // export async function Navbar() {
   //   const user = await getUser();

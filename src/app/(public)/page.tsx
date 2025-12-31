@@ -1,4 +1,6 @@
 import AboutMe from "@/components/modules/home/aboutSection/AboutMe";
+import ContactSection from "@/components/modules/home/contactSection/ContactSection";
+import GithubContributionsSection from "@/components/modules/home/Github/GithubContributionsSection";
 import Hero from "@/components/modules/home/heroSection/Hero";
 import ProjectsSection from "@/components/modules/home/projectsSection/ProjectsSection";
 import SkillsSection from "@/components/modules/home/Skills";
@@ -12,6 +14,8 @@ const HomePage = () => {
         <AboutMe />
         <SkillsSection />
         <ProjectsSection />
+        <ContactSection />
+        <GithubContributionsSection />
       </ContainerWrapper>
     </main>
   );
