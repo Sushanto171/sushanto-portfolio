@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -67,6 +68,26 @@ export default function RootLayout({
         <meta
           name="google-site-verification"
           content="MaDbWmP54uIbI2CW-nwQmC-a5i2R72BuW4jejYD1ap4"
+        />
+        <meta name="robots" content="follow" />
+        <Script
+          id="schema-person"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Sushanto Kumar",
+              url: "https://sushantokumar.vercel.app",
+              jobTitle: "MERN Stack & Next.js Developer",
+              description:
+                "Sushanto Kumar — MERN Stack developer specializing in React.js, Next.js, Node.js, Express, and MongoDB.",
+              sameAs: [
+                "https://github.com/Sushanto171",
+                "https://www.linkedin.com/in/sushanto-kumar171/",
+              ],
+            }),
+          }}
         />
       </head>
       <body

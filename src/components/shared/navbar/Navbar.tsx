@@ -4,6 +4,7 @@ import Link from "next/link";
 import { JSX } from "react";
 import AuthToggle from "./AuthToggle";
 import MobilMenuDrawer from "./MobilMenuDrawer";
+import ContainerWrapper from "../ContainerWrapper";
 
 export interface INavLink {
   href: string;
@@ -35,7 +36,8 @@ export async function Navbar() {
     <>
       {/* Desktop Navbar (Top) */}
       <header className="hidden md:block sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
-        <div className="container mx-auto flex items-center justify-between px-6 py-6">
+      <ContainerWrapper>
+        <div className="flex items-center justify-between py-6">
           {/* Brand / Logo */}
           <Link href="/" className="text-2xl font-semibold tracking-tight">
             <span className=" hover:text-accent">Sushanto</span>.
@@ -58,6 +60,7 @@ export async function Navbar() {
           </nav>
           <AuthToggle user={user} />
         </div>
+      </ContainerWrapper>
       </header>
 
       {/* Mobile Bottom Navbar */}
