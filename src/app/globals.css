@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -127,4 +132,20 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(15deg); }
+  40% { transform: rotate(-10deg); }
+  60% { transform: rotate(15deg); }
+  80% { transform: rotate(-10deg); }
+}
+
+.animate-wave {
+  animation: wave 2s infinite;
+  transform-origin: 70% 70%; /* pivot near the bottom of the hand */
+  display: inline-block;
+  animation-delay: 3s;
 }

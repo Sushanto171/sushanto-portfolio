@@ -10,6 +10,7 @@ import Link from "next/link";
 import { useState } from "react";
 import AuthToggle from "./AuthToggle";
 import { INavLink } from "./Navbar";
+import ResumeButton from "./ResumeButton";
 
 export default function MobilMenuDrawer({
   navItems,
@@ -45,7 +46,8 @@ export default function MobilMenuDrawer({
               {item.label}
             </Link>
           ))}
-          <AuthToggle user={user} />
+          <ResumeButton />
+          {/* <AuthToggle user={user} /> */}
         </nav>
         <Separator className="my-6" />
         <p className="text-xs text-muted-foreground text-center">

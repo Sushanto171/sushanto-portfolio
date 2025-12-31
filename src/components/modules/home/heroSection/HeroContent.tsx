@@ -1,13 +1,14 @@
-import { Button } from '@/components/ui/button';
-import { Download, Mail } from 'lucide-react';
+import ResumeButton from '@/components/shared/navbar/ResumeButton';
 import { Fragment } from 'react';
+import ContactMeButton from './ContactMeButton';
 
 export default function HeroContent() {
   return (
     <Fragment>
-      <p className="text-xs sm:text-sm uppercase tracking-widest text-accent font-semibold">
-        👋 Hello, I’m
-      </p>
+       <p className="text-xs sm:text-sm uppercase tracking-widest text-accent font-semibold flex items-center gap-1">
+      <span className="inline-block animate-wave text-xl">👋</span> Hello, I’m
+    </p>
+
 
       <h1 className="mt-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
         <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
@@ -23,24 +24,8 @@ export default function HeroContent() {
 
 
       <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-        <Button size="lg" asChild>
-          <a href="/cv/Sushanto_Kumar_CV.pdf" download>
-            <Download className="mr-2 h-5 w-5" />
-            Download CV
-          </a>
-        </Button>
-
-        <Button
-          size="lg"
-          variant="outline"
-          className="border-primary/30 hover:bg-primary hover:text-primary-foreground"
-          asChild
-        >
-          <a href="#contact">
-            <Mail className="mr-2 h-5 w-5" />
-            Contact Me
-          </a>
-        </Button>
+        <ResumeButton />
+        <ContactMeButton />
       </div>
     </Fragment>
   );

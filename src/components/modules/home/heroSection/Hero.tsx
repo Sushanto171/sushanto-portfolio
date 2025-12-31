@@ -5,7 +5,7 @@ import PortfolioCodeCard from "./PortfolioCodeCard";
 
 export default function HeroSection() {
   return (
-    <section className="relative py-12 sm:py-16 sm:pt-0">
+    <section className="relative sm:pt-0">
       {/* Background Glow */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/10 via-accent/10 to-background opacity-80 blur-3xl" />
 
