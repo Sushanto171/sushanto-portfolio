@@ -23,7 +23,7 @@ export default function AboutMe() {
                   </h1>
 
                   <p className="text-muted-foreground text-lg leading-relaxed text-justify">
-                    Hello! I’m <span className="font-semibold text-foreground">Sushanto Chandra Sharkar</span> from Dhaka, Bangladesh. While my academic background is in BSc Botany, I discovered a passion for coding and web development along the way.
+                    Hello! I’m <span className="font-semibold text-foreground">Sushanto Kumar</span> from Dhaka, Bangladesh. While my academic background is in BSc Botany, I discovered a passion for coding and web development along the way.
                   </p>
 
                   <p className="text-muted-foreground text-lg leading-relaxed text-justify">
