@@ -34,7 +34,6 @@ export default async function GithubContributionsSection() {
       </Card>
     );
   }
-  console.log(data)
   if (!data) return null;
 
   return (

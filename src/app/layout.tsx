@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Toaster } from "react-hot-toast";
+import { Toaster } from "sonner";
 
 import Script from "next/script";
 import "./globals.css";
@@ -93,7 +93,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col dark`}
       >
-        <Toaster position="bottom-left" reverseOrder={true} />
+        <Toaster position="bottom-right" richColors={true} />
         {children}
       </body>
     </html>

@@ -5,7 +5,7 @@ import { IUser } from "@/types";
 import { LogIn, LogOut } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
+import { toast } from "sonner";
 
 export default function AuthToggle({ user }: { user: IUser | null }) {
   const router = useRouter();

@@ -8,7 +8,6 @@ import { DialogTitle } from "@radix-ui/react-dialog";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import AuthToggle from "./AuthToggle";
 import { INavLink } from "./Navbar";
 import ResumeButton from "./ResumeButton";
 
@@ -17,7 +16,7 @@ export default function MobilMenuDrawer({
   user,
 }: {
   navItems: INavLink[];
-  user: IUser;
+  user?: IUser;
 }) {
   const [open, setOpen] = useState(false);
   return (

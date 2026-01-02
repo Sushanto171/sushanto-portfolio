@@ -1,16 +1,15 @@
+import SectionHeader from "@/components/SectionHeader";
 import ResumeButton from "@/components/shared/navbar/ResumeButton";
 import { Card, CardContent } from "@/components/ui/card";
 import { Clock, Code, Rocket } from "lucide-react";
-import Image from "next/image";
 import ContactMeButton from "../heroSection/ContactMeButton";
-import SectionHeader from "@/components/SectionHeader";
 
 export default function AboutMe() {
   return (
     <section id="about" className="relative flex w-full flex-col md:pt-18">
       <div className="flex flex-1 flex-col ">
         {/* Section Header */}
-      <SectionHeader title="About Me" />
+        <SectionHeader title="About Me" />
 
         {/* Main Feature Content */}
         <div className="flex justify-center">
@@ -96,15 +95,16 @@ export default function AboutMe() {
             </div>
 
             {/* Right Column: Image */}
-            <div className="flex flex-1 justify-start pt-2 lg:pt-0">
+            <div className="hidden flex-1 justify-start pt-2 lg:pt-0">
               <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden group">
                 <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10" />
-                <Image
+                {/* <Image
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuB628oqFXvOTtKshErvk4hxw7xj-Bbo3RvcP5R7h_X4PSz1YWFKOdfn1l1_JOTJzWNMZKZeQ2dPHiYdwCzAz9Kg5l_miVAJ0jsfkdAyzGhtyBqHNz-vXrnuTBote-LVVS1yqsE5iDdb7HNVY9xpZSHR2-YgFnFLPdTF6j9w-2k1w17DRBUOtK7JQqgh4CcnVOSXC-PTvM0iDqZ5QybujwXc0EGCmDyLhOG3lq40Jy0-nMDHGFqhyrH5E7DBawadhuof-JLBocigeTE"
                   alt="Professional portrait of a software engineer"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+                /> */}
+
                 {/* Floating circle */}
                 <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-primary/30 rounded-full blur-2xl z-0" />
                 {/* Bottom info */}

@@ -12,7 +12,7 @@ import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { useRouter, useSearchParams } from "next/navigation";
-import toast from "react-hot-toast";
+import { toast } from "sonner";
 import z from "zod";
 const schema = z.object({
   email: z.string().email({ error: "Invalid Type Email." }),
@@ -53,7 +53,7 @@ export function LoginForm({
 
       if (!res.ok) throw new Error(data.message || "Login failed");
       toast.success(data.message || "Login successful!");
-      router.push(searchParams?.length >0 ? searchParams[1] : "/dashboard");
+      router.push(searchParams?.length > 0 ? searchParams[1] : "/dashboard");
     } catch (error: any) {
       console.log(error);
       toast.error(error.message || "Something went wrong");
