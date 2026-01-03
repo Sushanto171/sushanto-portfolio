@@ -42,7 +42,7 @@ export default async function GithubContributionsSection() {
         {/* Header */}
         <CardHeader className="pb-4">
           <CardTitle className="text-sm font-semibold">
-            {data.totalContributions.toLocaleString()} contributions in the last year
+           Github Contribution: {data.totalContributions.toLocaleString()} contributions in the last year
           </CardTitle>
         </CardHeader>
 
