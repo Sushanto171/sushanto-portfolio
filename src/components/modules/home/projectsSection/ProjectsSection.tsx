@@ -80,7 +80,7 @@ export const projectsData = [
     "title": "MediCamp – Medical Camp Management",
     "description": "A full-stack platform to manage medical camps, allowing users to register and organizers to manage participants and schedules.",
     "thumbnail": "https://res.cloudinary.com/drxi0wuoa/image/upload/v1767173969/portfolio/1767173958225-portfolio.png",
-    "liveLink": "https://medicamp.vercel.app",
+    "liveLink": "https://medicamp-91966.web.app",
     "repoLink": "https://github.com/Sushanto171/medicamp",
     "features": [
       "JWT authentication for organizers",

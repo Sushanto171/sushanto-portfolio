@@ -5,6 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { createLucideIcon, Github, Linkedin, } from "lucide-react";
 import ContainerWrapper from "./ContainerWrapper";
 import GithubContributionsSection from "../modules/home/Github/GithubContributionsSection";
+import GitBranch from "../ui/GitBranch";
 
 const XIcon =createLucideIcon("X", [
   [
@@ -95,9 +96,14 @@ export function Footer() {
         {/* Bottom Note */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Sushanto Kumar. All rights reserved.</p>
+          <div className="flex items-center gap-3">
+          <a href="https://github.com/Sushanto171/sushanto-portfolio" target="_blank" >
+          <GitBranch fill="#ffffff"  />
+          </a>
           <p className="text-muted-foreground/80">
             Designed with ❤️ using Next.js & shadcn/ui
           </p>
+          </div>
         </div>
       </div>
       </ContainerWrapper>
