@@ -24,7 +24,7 @@ export default function FloatingLinks() {
 
   return (
     <motion.div
-      className="fixed bottom-8 right-8 flex flex-col justify-center items-center gap-2 z-50"
+      className="fixed bottom-16 sm:bottom-8 right-4 sm:right-8 flex flex-col justify-center items-center gap-2 z-50"
       onMouseEnter={() => !isMobile && setIsOpen(true)}
       onMouseLeave={() => !isMobile && setIsOpen(false)}
       initial={{ opacity: 0, y: 50 }}
