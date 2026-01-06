@@ -7,8 +7,8 @@ const whatsAppUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(p
 export const info = {
   linkedin: "https://linkedin.com/in/sushantokumar",
   github: "https://github.com/sushanto171",
-  email: "sushantokumar@gmail.com",
-  emailHref: "mailto:sushantokumar@gmail.com",
+  email: "sushantokumar171@gmail.com",
+  emailHref: "mailto:sushantokumar171@gmail.com",
   whatsapp: whatsAppUrl,
   phone: "+8801791407583",
   portfolio: "https://sushantokumar.vercel.app",
