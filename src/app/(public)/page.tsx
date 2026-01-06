@@ -4,6 +4,7 @@ import Hero from "@/components/modules/home/heroSection/Hero";
 import ProjectsSection from "@/components/modules/home/projectsSection/ProjectsSection";
 import SkillsSection from "@/components/modules/home/Skills";
 import ContainerWrapper from "@/components/shared/ContainerWrapper";
+import FloatingLinks from "@/components/shared/FloatingLink";
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
         <SkillsSection />
         <ProjectsSection />
         <ContactSection />
+        <FloatingLinks />
       </ContainerWrapper>
     </main>
   );

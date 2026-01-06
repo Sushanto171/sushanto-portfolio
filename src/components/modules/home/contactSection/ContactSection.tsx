@@ -1,4 +1,5 @@
 "use client"
+import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -38,9 +39,9 @@ const ContactSection = () => {
     <section id="contact" className=" pt-18">
       {/* Header */}
       <div className="mb-14 text-center pt-6 ">
-        <span className="text-primary text-sm font-semibold uppercase tracking-wider">
+        <Badge className="bg-primary/20 border border-primary text-primary text-sm font-semibold uppercase tracking-wider">
           Get in touch
-        </span>
+        </Badge>
         <h2 className="mt-3 text-4xl md:text-5xl font-bold tracking-tight">
           Let’s work together
         </h2>
