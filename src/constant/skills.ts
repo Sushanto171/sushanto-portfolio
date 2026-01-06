@@ -47,7 +47,7 @@ export const skillsData: ISkill[] = [
   {
     id: "mongoose",
     label: "MONGOOSE",
-    icon: "https://mongoosejs.com/docs/images/mongoose5_62x30_transparent.png",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongoose/mongoose-original.svg",
     category: "Tools",
   },
   {

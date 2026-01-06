@@ -1,9 +1,10 @@
 import { Button } from '@/components/ui/button';
+import { info } from '@/constant/info';
 import { Download } from 'lucide-react';
 
 export default function ResumeButton() {
   return (
-    <a href="https://drive.google.com/uc?export=download&id=1oQntZHahET8dZCmaVC59PJbHcnhVOPme" download>
+    <a href={info.resume} download>
       <Button
         size="lg"
         className='rounded-full w-full'

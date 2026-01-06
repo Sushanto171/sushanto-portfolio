@@ -1,12 +1,12 @@
 "use client"
 import { Button } from '@/components/ui/button';
-import { whatsAppUrl } from '@/constant/whatsappLink';
+import { info } from '@/constant/info';
 import { MessageCircle } from 'lucide-react';
 
 export default function ContactMeButton() {
 
   const handleWhatsAppClick = () => {
-    window.open(whatsAppUrl, "_blank");
+    window.open(info.whatsapp, "_blank");
   };
 
   return (

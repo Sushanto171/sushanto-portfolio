@@ -1,10 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { whatsAppUrl } from "@/constant/whatsappLink";
+import { info } from "@/constant/info";
 import { AnimatePresence, motion } from "framer-motion";
-import { ExternalLink, Linkedin, Plus, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Github, Linkedin, Plus, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import Whatsapp from "../ui/Whatsapp";
 
 export default function FloatingLinks() {
@@ -17,9 +17,9 @@ export default function FloatingLinks() {
   }, []);
 
   const links = [
-    { icon: <Linkedin size={20} />, url: "https://www.linkedin.com/in/sushantokumar", label: "LinkedIn" },
-    { icon: <ExternalLink size={20} />, url: "https://sushantokumar.vercel.app", label: "Portfolio" },
-    { icon: <Whatsapp size={20} />, url: whatsAppUrl, label: "WhatsApp" },
+    { icon: <Linkedin size={20} />, url: info.linkedin, label: "LinkedIn" },
+    { icon: <Github size={20} />, url: info.github, label: "Portfolio" },
+    { icon: <Whatsapp size={20} />, url: info.whatsapp, label: "WhatsApp" },
   ];
 
   return (
@@ -44,10 +44,10 @@ export default function FloatingLinks() {
               exit={{ x: 50, opacity: 0 }}
               transition={{ delay: idx * 0.05, type: "spring", stiffness: 300 }}
             >
-                <Button
+              <Button
                 variant="outline"
                 className="p-2 rounded-full border hover:border-primary hover:bg-primary/10 hover:text-primary w-12 h-12"
-              
+
               >
                 {link.icon}
               </Button>
@@ -59,7 +59,7 @@ export default function FloatingLinks() {
         onClick={() => isMobile && setIsOpen(!isOpen)}
         className={`p-3 rounded-full w-14 h-14 shadow-lg
           transition-all duration-300
-          ${isOpen ? "bg-primary shadow-xl" : "bg-slate-800 text-slate-400"}
+          ${isOpen ? "bg-primary shadow-xl" : "bg-secondary/80 text-slate-400"}
           hover:bg-primary/90 hover:text-white
         `}
       >

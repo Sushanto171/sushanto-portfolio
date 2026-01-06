@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { info } from "@/constant/info";
 import {
   AtSign,
   Briefcase,
@@ -17,7 +18,7 @@ import { FormEvent } from "react";
 import { toast } from "sonner";
 
 const ContactSection = () => {
-  
+
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -61,20 +62,20 @@ const ContactSection = () => {
             <ContactItem
               Label="GitHub"
               icon={Github}
-              href="https://github.com/sushanto171"
+              href={info.github}
             />
 
             <ContactItem
               Label="LinkedIn"
               icon={Linkedin}
-              href="https://linkedin.com/in/sushanto-kumar171"
+              href={info.linkedin}
             />
 
             <div className="mt-6 pt-4 border-t">
               <ContactItem
-                Label="sushantokumar171@gamil.com"
+                Label={info.email}
                 icon={Mail}
-                href="mailto:sushantokumar171@gmail.com"
+                href={info.emailHref}
               />
             </div>
           </div>
@@ -152,12 +153,24 @@ const ContactItem = ({
   icon: LucideIcon;
   href: string;
 }) => {
+  const isEmail = href.startsWith("mailto:") || Label.includes("@");
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (isEmail) {
+      e.preventDefault(); // prevent default link behavior
+      navigator.clipboard.writeText(Label)
+        .then(() => toast.success("Email copied to clipboard!"))
+        .catch(() => toast.error("Failed to copy email"));
+    }
+  };
+
   return (
     <a
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group mb-4 flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+      onClick={handleClick}
+      target={!isEmail ? "_blank" : undefined}
+      rel={!isEmail ? "noopener noreferrer" : undefined}
+      className="group mb-4 flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors cursor-pointer"
     >
       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-muted group-hover:bg-primary/10 transition">
         <Icon className="h-5 w-5" />
